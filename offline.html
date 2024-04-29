@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- 
+<!--
  Copyright 2021 Google LLC
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,38 +13,369 @@
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
- -->
+-->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clyde Macabangon</title>
-    <style>
-      body {
-        background: #282c34;
-        box-sizing: border-box;
-        font-family: sans-serif;
-        font-size: 1.5rem;
-        margin: 0;
-      }
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch.png" />
 
-      .offline {
-        align-items: center;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 0 auto;
-        max-width: 40ch;
-        min-height: 100vh;
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="mystyle.css" rel="mystyle">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    
+    <script type="module" src="/js/main.js"></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Martel:wght@400;700;800&family=Nanum+Myeongjo&display=swap');
+      .martel-regular {
+        font-family: "Martel", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .martel-bold {
+        font-family: "Martel", serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+      .martel-extrabold {
+        font-family: "Martel", serif;
+        font-weight: 800;
+        font-style: normal;
+      }
+      .nanum-myeongjo-regular {
+        font-family: "Nanum Myeongjo", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .josefin-sans-medium {
+        font-family: "Josefin Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
       }
     </style>
   </head>
-  <body>
-    <div class="offline">
-      <h1>Offline</h1>
-      <p>The current page isn't available offline. Please try again when when you're back online.</p>
+  <body style="background: #212121">
+    <!-- NAVBAR -->
+    <nav class="nav-wrapper josefin-sans-medium" style="background-color: #212121;"> 
+      <a href="#" class="sidenav-trigger" data-target="mobile-links">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#education">EDUCATION</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+      </ul>
+    </nav>
+  
+    <!-- SIDEBAR -->
+    <ul class="sidenav josefin-sans-medium" id="mobile-links">
+      <li><a href="#education">EDUCATION</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+    </ul>
+  
+    <!-- PARALLAX TOP BG WITH PIC -->
+    <div class="parallax-container">
+      <div class="parallax"><img src="public/images/bg.jpg"></div>
+      <div class="container valign-wrapper">
+        <div class="row center-align">
+          <div class="col s12 m8 offset-m2">
+            <img src="public/images/clydepic.jpeg" alt="" class="responsive-img circle">
+          </div>
+        </div>
+      </div>
     </div>
+    
+  
+    <!-- CONTENT -->
+    <div class="container white" style="border: 1px solid #D3D3D3;">
+      <main>
+        <div id="header">
+          <div class="container center-align nanum-myeongjo-regular">
+            <div class="row">
+              <div class="col s12">
+                <h1 style="font-size: 5vw" class="header-text">Clyde Cedrick Macabangon</h1>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row">
+              <div class="col s6 offset-s3">
+                <h4 class="flow-text">Programmer</h4>
+              </div>
+            </div>
+          </div>
+      
+          <div class="container nanum-myeongjo-regular" style="margin-top: 3vw;">
+            <div class="row center-align">
+              <div class="col s12 m4 offset-m4">
+                <div class="col s4 center-align">
+                  <a href="https://web.facebook.com/clydefabro22">
+                    <img src="public/images/facebook.png" alt="" class="responsive-img" style="width: 60px;">
+                  </a>
+                </div>
+                
+                <div class="col s4 center-align">
+                  <a href="https://github.com/clydefabro22">
+                      <img src="public/images/github.png" alt="" class="responsive-img" style="width: 60px;">
+                  </a>
+                </div>
+      
+      
+                <div class="col s4 center-align">
+                  <a href="https://www.linkedin.com/in/clyde-cedrick-fabro-a488082b9/">
+                      <img src="public/images/linkedin.png" alt="" class="responsive-img" style="width: 60px;">
+                  </a>
+                </div>
+      
+              </div>
+            </div>
+            <div class="row flow-text center-align" style="margin-top: 5vw;">
+                <h6>Email: clydecedrickfabro2002@gmail.com</h5>
+                <h6>Contact Number: +63 920 238 4585</h5>
+            </div>
+          </div>
+        </div>
+        
+        
+    
+        <!-- EDUCATION SECTION -->
+        <div class="section center-align" style="margin-top:5vw"  id="education">
+          <div class="row">
+            <div class="col s10 m4 offset-s1">
+              <div>
+                <h2 class="martel-regular">Education</h2>
+              </div>
+            </div>
+            
+          </div>
+          <div class="row martel-regular">
+            <div class="col s8 offset-s2">
+              <div class="row" style="padding: 50px;">
+                <img src="public/images/addu_logo.png" alt="" class="responsive-img">
+                <h5>Ateneo de Davao University</h5>
+                <h5>BS in Computer Science</h5>
+                <h6>2021-2026</h6>
+              </div>
+              <div class="row" style="padding: 50px;">
+                <img src="public/images/lpudavao_logo.png" alt="" class="responsive-img">
+                <h5>Lyceum of the Philippines University - Davao</h5>
+                <h5>STEM Strand</h5>
+                <h6>2018-2021</h6>
+              </div>
+              <div class="row" style="padding: 50px;">
+                <img src="public/images/jmc_logo.png" alt="" class="responsive-img">
+                <h5>Jose Maria College</h5>
+                <h6>2008-2016</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- PROJECTS SECTION -->
+        <div class="section center-align"  id="projects">
+          <div class="row">
+            <div class="col s10 m4 offset-s1">
+              <div>
+                <h2 class="martel-regular">Projects</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="card horizontal">
+                <div class="card-stacked">
+                  <h5 class="header">Einstein's Riddle Brute Force</h2>
+                  <div class="card-content">
+                    <p>A java program to solve Einstein's riddle through recursion brute forcing.</p>
+                  </div>
+                  <div class="card-action">
+                    <div class="col s2 offset-s10">
+                      <a href="https://github.com/clydefabro22/einstein_riddle_bruteforce" class="valign-wrapper">
+                        LINK
+                        <i class="material-icons">chevron_right</i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="card horizontal">
+                <div class="card-stacked">
+                  <h5 class="header">Computer Programming 2 Project</h2>
+                  <div class="card-content">
+                    <p>A java based GUI for a store made for Computer Programming</p>
+                  </div>
+                  <div class="card-action">
+                    <div class="col s2 offset-s10">
+                      <a href="https://github.com/clydefabro22/cp2project_javaGui" class="valign-wrapper">
+                        LINK
+                        <i class="material-icons">chevron_right</i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="card horizontal">
+                <div class="card-stacked">
+                  <h5 class="header">Curriculum Vitae</h2>
+                  <div class="card-content">
+                    <p>This own web app's repository using Materialize CSS</p>
+                  </div>
+                  <div class="card-action">
+                    <div class="col s2 offset-s10">
+                      <a href="https://github.com/clydefabro22/clydefabro22.github.io" class="valign-wrapper">
+                        LINK
+                        <i class="material-icons">chevron_right</i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="card horizontal">
+                <div class="card-stacked">
+                  <h5 class="header">Event Driven Programming Project</h2>
+                  <div class="card-content">
+                    <p>Contribution to an EDP Project</p>
+                  </div>
+                  <div class="card-action">
+                    <div class="col s2 offset-s10">
+                      <a href="https://github.com/khesir/event-driven-program" class="valign-wrapper">
+                        LINK
+                        <i class="material-icons">chevron_right</i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+    
+        </div>
+  
+        <!-- SKILLS SECTION -->
+        <div class="section center-align" id="skills">
+          <div class="row">
+            <div class="col s10 m4 offset-s1">
+              <div>
+                <h2 class="martel-regular">Skills</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 valign-wrapper center-align">
+              <div class="col s12 m3" style="font-size: 70px">
+                <i class="devicon-java-plain"></i>
+              </div>
+              <div class="col s12 m9 valign-wrapper center-align">
+                <div class="progress">
+                  <div class="determinate" style="width: 90%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 valign-wrapper center-align">
+              <div class="col s12 m3" style="font-size: 70px">
+                <i class="devicon-photoshop-plain"></i>  
+              </div>
+              <div class="col s12 m9 valign-wrapper center-align">
+                <div class="progress">
+                  <div class="determinate" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 valign-wrapper center-align">
+              <div class="col s12 m3" style="font-size: 70px">
+                <i class="devicon-premierepro-plain"></i>
+              </div>
+              <div class="col s12 m9 valign-wrapper center-align">
+                <div class="progress">
+                  <div class="determinate" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 valign-wrapper center-align">
+              <div class="col s12 m3" style="font-size: 70px">
+                <i class="devicon-html5-plain"></i>
+              </div>
+              <div class="col s12 m9 valign-wrapper center-align">
+                <div class="progress">
+                  <div class="determinate" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 valign-wrapper center-align">
+              <div class="col s12 m3" style="font-size: 70px">
+                <i class="devicon-css3-plain"></i>
+              </div>
+              <div class="col s12 m9 valign-wrapper center-align">
+                <div class="progress">
+                  <div class="determinate" style="width: 70%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 valign-wrapper center-align">
+              <div class="col s12 m3" style="font-size: 70px">
+                <i class="devicon-csharp-plain"></i>
+              </div>
+              <div class="col s12 m9 valign-wrapper center-align">
+                <div class="progress">
+                  <div class="determinate" style="width: 60%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 valign-wrapper center-align">
+              <div class="col s12 m3" style="font-size: 70px">
+                <i class="devicon-python-plain"></i>
+              </div>
+              <div class="col s12 m9 valign-wrapper center-align">
+                <div class="progress">
+                  <div class="determinate" style="width: 50%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </main>
+    </div>
+    
+  
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+    </script>
+    <script>
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+        $('.parallax').parallax();
+      })
+    </script>
   </body>
 </html>
