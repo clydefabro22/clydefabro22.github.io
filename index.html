@@ -19,74 +19,363 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PWA Edit</title>
+    <title>Clyde Macabangon</title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="apple-touch-icon" href="/images/icons/apple-touch.png" />
-    <link rel="stylesheet" href="/css/style.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="mystyle.css" rel="mystyle">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    
     <script type="module" src="/js/main.js"></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Martel:wght@400;700;800&family=Nanum+Myeongjo&display=swap');
+      .martel-regular {
+        font-family: "Martel", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .martel-bold {
+        font-family: "Martel", serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+      .martel-extrabold {
+        font-family: "Martel", serif;
+        font-weight: 800;
+        font-style: normal;
+      }
+      .nanum-myeongjo-regular {
+        font-family: "Nanum Myeongjo", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .josefin-sans-medium {
+        font-family: "Josefin Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+      }
+    </style>
   </head>
-  <body class="dark">
-    <button id="install" aria-label="Install">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <g><path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z" /></g>
-      </svg>
-    </button>
-    <button id="mode" aria-label="Switch night mode off">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="night" data-active="true">
-        <path d="M9.5 4c4.41 0 8 3.59 8 8s-3.59 8-8 8c-.34 0-.68-.02-1.01-.07 1.91-2.16 3.01-4.98 3.01-7.93s-1.1-5.77-3.01-7.93C8.82 4.02 9.16 4 9.5 4m0-2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65c1.47.85 3.18 1.35 5 1.35 5.52 0 10-4.48 10-10S15.02 2 9.5 2z" />
-      </svg>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="day" data-active="false">
-        <path d="M5 12.5H2v-2h3v2zM13 2h-2v3h2V2zm6 8.5v2h3v-2h-3zM17 12c0 2.76-2.24 5-5 5s-5-2.24-5-5 2.24-5 5-5 5 2.24 5 5zm-6 10h2v-3h-2v3zm-5.01-6.11l-2.12 2.12 1.41 1.41L7.4 17.3l-1.41-1.41zM5.64 4.22L4.22 5.64l2.12 2.12 1.41-1.41-2.11-2.13zm10.25 1.77L17.3 7.4l2.12-2.12-1.41-1.41-2.12 2.12zm2.47 13.79l1.41-1.41-2.12-2.12-1.41 1.41 2.12 2.12z" />
-      </svg>
-    </button>
-    <div class="actions">
-      <button class="actions--action actions--toggle" aria-label="Open actions" aria-expanded="false" aria-haspopup="true" aria-controls="actions-menu">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="actions--icon" aria-hidden="true">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
-        </svg>
-      </button>
-      <ul class="actions--menu" aria-hidden="true" id="actions-menu">
-        <!-- File System Access -->
-        <li class="actions--menu-item">
-          <button class="actions--action" aria-label="Open file" id="open" tabindex="-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="actions--icon actions--icon__small">
-              <path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z" />
-            </svg>
-          </button>
-        </li>
-        <li class="actions--menu-item">
-          <button class="actions--action" aria-label="Save file" id="save" tabindex="-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="actions--icon actions--icon__small">
-              <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm2 16H5V5h11.17L19 7.83V19z" />
-              <circle cx="12" cy="15" r="3" />
-              <path d="M6 6h9v4H6z" />
-            </svg>
-          </button>
-        </li>
-        <li class="actions--menu-item">
-          <button class="actions--action" aria-label="Reset file" id="reset" tabindex="-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="actions--icon actions--icon__small">
-              <path d="M5 13h14v-2H5v2zm-2 4h14v-2H3v2zM7 7v2h14V7H7z" />
-            </svg>
-          </button>
-        </li>
-        <!-- Multi-Screen Window Placement -->
-        <li class="actions--menu-item">
-          <button class="actions--action" aria-label="Toggle preview mode" id="preview" tabindex="-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="actions--icon actions--icon__small">
-              <path d="M19,3H5C3.89,3,3,3.9,3,5v14c0,1.1,0.89,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.11,3,19,3z M19,19H5V7h14V19z M12,10.5 c1.84,0,3.48,0.96,4.34,2.5c-0.86,1.54-2.5,2.5-4.34,2.5S8.52,14.54,7.66,13C8.52,11.46,10.16,10.5,12,10.5 M12,9 c-2.73,0-5.06,1.66-6,4c0.94,2.34,3.27,4,6,4s5.06-1.66,6-4C17.06,10.66,14.73,9,12,9L12,9z M12,14.5c-0.83,0-1.5-0.67-1.5-1.5 s0.67-1.5,1.5-1.5s1.5,0.67,1.5,1.5S12.83,14.5,12,14.5z" />
-            </svg>
-          </button>
-        </li>
-        <!-- Screen Wake Lock -->
-        <li class="actions--menu-item">
-          <button class="actions--action" aria-label="Toggle focused mode" id="focus" tabindex="-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="actions--icon actions--icon__small">
-              <path d="M16 5v8c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V5h10m4-2H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm-2 5V5h2v3h-2zm2 11H4v2h16v-2z" />
-            </svg>
-          </button>
-        </li>
+  <body style="background: #212121">
+    <!-- NAVBAR -->
+    <nav class="nav-wrapper josefin-sans-medium" style="background-color: #212121;"> 
+      <a href="#" class="sidenav-trigger" data-target="mobile-links">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#education">EDUCATION</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#skills">SKILLS</a></li>
       </ul>
+    </nav>
+  
+    <!-- SIDEBAR -->
+    <ul class="sidenav josefin-sans-medium" id="mobile-links">
+      <li><a href="#education">EDUCATION</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+    </ul>
+  
+    <!-- PARALLAX TOP BG WITH PIC -->
+    <div class="parallax-container">
+      <div class="parallax"><img src="/images/bg.jpg"></div>
+      <div class="container valign-wrapper">
+        <div class="row center-align">
+          <div class="col s12 m8 offset-m2">
+            <img src="/images/clydepic.jpeg" alt="" class="responsive-img circle">
+          </div>
+        </div>
+      </div>
     </div>
+    
+  
+    <!-- CONTENT -->
+    <div class="container white" style="border: 1px solid #D3D3D3;">
+      <main>
+        <div id="header">
+          <div class="container center-align nanum-myeongjo-regular">
+            <div class="row">
+              <div class="col s12">
+                <h1 style="font-size: 5vw" class="header-text">Clyde Cedrick Macabangon</h1>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row">
+              <div class="col s6 offset-s3">
+                <h4 class="flow-text">Programmer</h4>
+              </div>
+            </div>
+          </div>
+      
+          <div class="container nanum-myeongjo-regular" style="margin-top: 3vw;">
+            <div class="row center-align">
+              <div class="col s12 m4 offset-m4">
+                <div class="col s4 center-align">
+                  <a href="https://web.facebook.com/clydefabro22">
+                    <img src="public/images/facebook.png" alt="" class="responsive-img" style="width: 60px;">
+                  </a>
+                </div>
+                
+                <div class="col s4 center-align">
+                  <a href="https://github.com/clydefabro22">
+                      <img src="public/images/github.png" alt="" class="responsive-img" style="width: 60px;">
+                  </a>
+                </div>
+      
+      
+                <div class="col s4 center-align">
+                  <a href="https://www.linkedin.com/in/clyde-cedrick-fabro-a488082b9/">
+                      <img src="public/images/linkedin.png" alt="" class="responsive-img" style="width: 60px;">
+                  </a>
+                </div>
+      
+              </div>
+            </div>
+            <div class="row flow-text center-align" style="margin-top: 5vw;">
+                <h6>Email: clydecedrickfabro2002@gmail.com</h5>
+                <h6>Contact Number: +63 920 238 4585</h5>
+            </div>
+          </div>
+        </div>
+        
+        
+    
+        <!-- EDUCATION SECTION -->
+        <div class="section center-align" style="margin-top:5vw"  id="education">
+          <div class="row">
+            <div class="col s10 m4 offset-s1">
+              <div>
+                <h2 class="martel-regular">Education</h2>
+              </div>
+            </div>
+            
+          </div>
+          <div class="row martel-regular">
+            <div class="col s8 offset-s2">
+              <div class="row" style="padding: 50px;">
+                <img src="public/images/addu_logo.png" alt="" class="responsive-img">
+                <h5>Ateneo de Davao University</h5>
+                <h5>BS in Computer Science</h5>
+                <h6>2021-2026</h6>
+              </div>
+              <div class="row" style="padding: 50px;">
+                <img src="public/images/lpudavao_logo.png" alt="" class="responsive-img">
+                <h5>Lyceum of the Philippines University - Davao</h5>
+                <h5>STEM Strand</h5>
+                <h6>2018-2021</h6>
+              </div>
+              <div class="row" style="padding: 50px;">
+                <img src="public/images/jmc_logo.png" alt="" class="responsive-img">
+                <h5>Jose Maria College</h5>
+                <h6>2008-2016</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- PROJECTS SECTION -->
+        <div class="section center-align"  id="projects">
+          <div class="row">
+            <div class="col s10 m4 offset-s1">
+              <div>
+                <h2 class="martel-regular">Projects</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="card horizontal">
+                <div class="card-stacked">
+                  <h5 class="header">Einstein's Riddle Brute Force</h2>
+                  <div class="card-content">
+                    <p>A java program to solve Einstein's riddle through recursion brute forcing.</p>
+                  </div>
+                  <div class="card-action">
+                    <div class="col s2 offset-s10">
+                      <a href="https://github.com/clydefabro22/einstein_riddle_bruteforce" class="valign-wrapper">
+                        LINK
+                        <i class="material-icons">chevron_right</i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="card horizontal">
+                <div class="card-stacked">
+                  <h5 class="header">Computer Programming 2 Project</h2>
+                  <div class="card-content">
+                    <p>A java based GUI for a store made for Computer Programming</p>
+                  </div>
+                  <div class="card-action">
+                    <div class="col s2 offset-s10">
+                      <a href="https://github.com/clydefabro22/cp2project_javaGui" class="valign-wrapper">
+                        LINK
+                        <i class="material-icons">chevron_right</i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="card horizontal">
+                <div class="card-stacked">
+                  <h5 class="header">Curriculum Vitae</h2>
+                  <div class="card-content">
+                    <p>This own web app's repository using Materialize CSS</p>
+                  </div>
+                  <div class="card-action">
+                    <div class="col s2 offset-s10">
+                      <a href="https://github.com/clydefabro22/clydefabro22.github.io" class="valign-wrapper">
+                        LINK
+                        <i class="material-icons">chevron_right</i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="card horizontal">
+                <div class="card-stacked">
+                  <h5 class="header">Event Driven Programming Project</h2>
+                  <div class="card-content">
+                    <p>Contribution to an EDP Project</p>
+                  </div>
+                  <div class="card-action">
+                    <div class="col s2 offset-s10">
+                      <a href="https://github.com/khesir/event-driven-program" class="valign-wrapper">
+                        LINK
+                        <i class="material-icons">chevron_right</i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+    
+        </div>
+  
+        <!-- SKILLS SECTION -->
+        <div class="section center-align" id="skills">
+          <div class="row">
+            <div class="col s10 m4 offset-s1">
+              <div>
+                <h2 class="martel-regular">Skills</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 valign-wrapper center-align">
+              <div class="col s12 m3" style="font-size: 70px">
+                <i class="devicon-java-plain"></i>
+              </div>
+              <div class="col s12 m9 valign-wrapper center-align">
+                <div class="progress">
+                  <div class="determinate" style="width: 90%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 valign-wrapper center-align">
+              <div class="col s12 m3" style="font-size: 70px">
+                <i class="devicon-photoshop-plain"></i>  
+              </div>
+              <div class="col s12 m9 valign-wrapper center-align">
+                <div class="progress">
+                  <div class="determinate" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 valign-wrapper center-align">
+              <div class="col s12 m3" style="font-size: 70px">
+                <i class="devicon-premierepro-plain"></i>
+              </div>
+              <div class="col s12 m9 valign-wrapper center-align">
+                <div class="progress">
+                  <div class="determinate" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 valign-wrapper center-align">
+              <div class="col s12 m3" style="font-size: 70px">
+                <i class="devicon-html5-plain"></i>
+              </div>
+              <div class="col s12 m9 valign-wrapper center-align">
+                <div class="progress">
+                  <div class="determinate" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 valign-wrapper center-align">
+              <div class="col s12 m3" style="font-size: 70px">
+                <i class="devicon-css3-plain"></i>
+              </div>
+              <div class="col s12 m9 valign-wrapper center-align">
+                <div class="progress">
+                  <div class="determinate" style="width: 70%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 valign-wrapper center-align">
+              <div class="col s12 m3" style="font-size: 70px">
+                <i class="devicon-csharp-plain"></i>
+              </div>
+              <div class="col s12 m9 valign-wrapper center-align">
+                <div class="progress">
+                  <div class="determinate" style="width: 60%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col s10 offset-s1 m4 offset-m4 valign-wrapper center-align">
+              <div class="col s12 m3" style="font-size: 70px">
+                <i class="devicon-python-plain"></i>
+              </div>
+              <div class="col s12 m9 valign-wrapper center-align">
+                <div class="progress">
+                  <div class="determinate" style="width: 50%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </main>
+    </div>
+    
+  
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+    </script>
+    <script>
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+        $('.parallax').parallax();
+      })
+    </script>
   </body>
 </html>

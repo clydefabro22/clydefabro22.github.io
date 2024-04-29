@@ -1,0 +1,32 @@
+@media (max-width: 768px) {
+    .nav-link {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    .nav-icon {
+        width: 40px; /* Adjust icon size for smaller screens */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Stack the links vertically on smaller screens */
+    }
+
+    .navbar-collapse {
+        justify-content: center; /* Center the navbar items on smaller screens */
+    }
+}
+
+/* Text Styles */
+.social-link {
+  height: 20px;
+  width: auto;
+}
+.header-text {
+  flex-wrap: wrap;
+}
+
+.border-bar {
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
