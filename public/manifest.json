@@ -44,6 +44,12 @@
       "sizes": "1024x1024",
       "src": "/images/icons/maskable-1024.png",
       "purpose": "maskable"
+    },
+    {
+      "type": "image/png",
+      "sizes": "144x144",
+      "src": "/images/icons/logo-144.png",
+      "purpose": "maskable"
     }
   ],
   "theme_color": "#282c34",
